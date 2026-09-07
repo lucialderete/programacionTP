@@ -1,0 +1,49 @@
+ALGORITMO NUMEROS
+ENTRADA: num: entero
+SALIDA: cantidad, cantPrimos, sumPrimos, sumImpares: entero
+VAR. AUX.: aux, digito, i: entero
+CONSTANTES:
+
+A0. Inicializar 
+A1. LEER(num)
+A2. ValidarNum
+A3. AnalizaeNum
+A4. ESCRIBIR(cantidad, cantPrimos, sumImpares, sumImpares)
+A5. FIN_ALGORITMO
+
+A0. Inicializar
+    cantidad <- 0
+    cantPrimos <- 0
+    sumPrimos <-0 
+    sumImpares <- 0
+
+A2. ValidarNum
+    MIENTRAS ((num < 10 ) O (num > 999999)) HACER   
+        ESCRIBIR("el numero no es valido!")
+        LEER(num)
+    FIN_MIENTRAS
+
+A3. AnalizarNum
+    aux <- num
+    MIENTRAS(aux > 0) HACER
+        digito <- aux / 10
+        cantidad <- cantidad + 1
+        SI(digito % 2 <> 0) ENTONCES
+            sumImpares <- sumImpares + digito
+        FIN_SI
+
+        PARA i DESDE 1 HASTA digito HACER 
+            SI(digito / i == 0) ENTONCES
+                div <- div + 1
+            FIN_SI
+        FIN_PARA
+
+        SI(div == 2) ENTONCES
+            cantPrimos <- cantPrimos + 1
+            sumPrimos <- sumPrimos + digito
+        FIN_SI
+
+        aux <- aux / 10
+    FIN_MIENTRAS
+
+            

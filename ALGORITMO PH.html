@@ -1,0 +1,56 @@
+ALGORITMO PH
+ENTRADA: ph1, ph1, ph2: real, muestra: entero
+SALIDA: phPromedio, rango: real, estado: cadena de caracteres
+VAR. AUX:minimo, maximo: real
+CONSTANTES:
+
+A0. Inicializar
+A1. LEER(ph1, ph2, ph3)
+A2. ProcesarPH
+A3. ESCRIBIR(phPromedio, rango, estado)
+A4. FIN_ALGORITMO
+
+A0. Inicializar
+    phPromedio <- 0
+    rango <- 0
+
+A2. ProcesarPH
+    SI( ((ph1 < 0 O ph1 > 14) O (ph2< 0 O ph2>14 ) O (ph3 < 0 O ph3 > 14)) ENTONCES
+        ESCRIBIR("ph fuera de rango")
+    SINO
+        phPromedio <- (ph1+ph2+ph3)/3
+        ESCRIBIR("pH promedio: ", phPromedio)
+        LEER(muestra)
+
+        SEGUN(muestra)
+            '1': 
+                minimo <- 6.5
+                maximo <- 8.5
+            '2':
+                minimo <- 5.5
+                maximo <- 7.5
+            '3':
+                minimo <- 4.0
+                maximo <- 7.0
+        FIN_SEGUN
+
+        ESCRIBIR("Rango: ", minimo, maximo)
+
+        SI(phPromedio < minimo) ENTONCES
+            ESCRIBIR("por debajo del rango")
+            SI((minimo - phPromedio) > 1.0)ENTONCES
+                ESCRIBIR("Alerta prioritaria")
+            FIN_SI
+        SINO
+            SI(phPromedio > maximo) ENTONCES
+                ESCRIBIR("por encima del rango")
+                SI((phPromedio - max ) > 1.0)) ENTONCES
+                    ESCRIBIR("alerta prioritaria")
+                FIN_SI
+            SINO
+                ESCRIBIR("dentro del rango")
+                SI(((phPromedio - min) < 0.2) O ((max- phPromedio) < 0.2)) ENTONCES
+                    ESCRIBIR("cerca del limite")
+            FIN_SI
+        FIN_SI
+    FIN_SI

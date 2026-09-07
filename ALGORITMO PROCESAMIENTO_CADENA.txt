@@ -1,0 +1,7 @@
+ALGORITMO PROCESAMIENTO_CADENA
+ENTRADA: c: caracter con marca final MF='.'
+SALIDA:
+VAR. AUX:
+CONSTANTES:
+
+A0. 

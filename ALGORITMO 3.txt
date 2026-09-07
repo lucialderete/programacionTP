@@ -1,0 +1,22 @@
+ALGORITMO 3
+ENTRADA: c: caracter, MF='.'
+SALIDA: aviso: cc
+VAR. AUX.: anterior: caracter, error: bool
+CONSTANTE:
+
+A0. Inicializar
+    anterior <- ' '
+A1. LEER(c)
+A2. AnalizarFrase
+A3. FIN_ALGORITMO
+
+A2. AnalizarFrase
+    MIENTRAS(c<>MF)
+        SI((anterior = 'n' )  ∧ (c= 'b')) ENTONCES
+            ESCRIBIR("la frase tiene errores ortograficos")
+        SINO 
+            ESCRIBIR("La frase no tiene errores ortograficos")
+        FIN_SI
+        LEER(c)
+    FIN_MIENTRAS
+

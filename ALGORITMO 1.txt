@@ -1,0 +1,36 @@
+ALGORITMO 1
+ENTRADA: c: caracter, MF='.'
+SALIDA: longitud, hiatos: entero
+VAR. AUX.: anterior: caracter
+CONSTANTES:
+
+A0. Inicializar
+A1. LEER(c)
+A2. ProcesarPalabra
+A3. MostrarResultados
+A3. FIN_ALGORITMO
+
+A0. Inicializar
+    longitud<- 0
+    anterior <- ' '
+    hiatos<- 0
+
+A2. ProcesarPalabra
+    MIENTRAS(c <> MF)
+        longitud <- longitud + 1
+        SI((anterior = 'a' ∨ anterior = 'e' ∨ anterior = 'o')
+             ∧(c='a' ∨ c='e' ∨ c = 'o' ∨ c='í' ∨ c='ú') ) ENTONCES
+             hiatos <- hiatos + 1
+        SINO SI( (anterior = 'í' ∨ anterior = 'ú' )  ∧
+                    (c = 'a' ∨ c= 'e' ∨ c= 'o')) ENTONCES
+                hiatos <- hiatos + 1
+        FIN_SI
+
+        anterior <- c
+
+        LEER(c)
+    FIN_MIENTRAS
+
+A3. MostrarResultados
+    ESCRIBIR(longitud)
+    ESCRIBIR(hiatos)

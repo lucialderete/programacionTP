@@ -1,0 +1,32 @@
+ALGORITMO CORRECTOR_GRAMATICAL
+ENTRADA: c: caracter, MF='.'
+SALIDA:  errores: entero
+VAR. AUX: anterior: caracter, tieneError: entero
+CONSTANTE:
+
+A0. Inicializar
+    anterior <- ' '
+    errores<- 0
+    tieneError <- 0
+
+A1. LEER(c)
+A2. AnalizarFrase
+    MIENTRAS(c <> MF)
+        SI(anterior = 'n'  ∧ ( c= 'p' ∨ c = 'b'))ENTONCES
+            tieneError <- 1
+            anterior <- 'm' 
+        SINO 
+            tieneError <- 0        
+        FIN_SI
+
+        SI(tieneError = 1) ENTONCES
+            errores <- errores + 1
+        FIN_SI
+        ESCRIBIR(anterior)
+        anterior <- c
+        LEER(c)
+    FIN_MIENTRAS
+    ESCRIBIR(anterior)
+    ESCRIBIR('.')
+A3. ESCRIBIR(errores)
+A4.FIN_ALGORITMO

@@ -1,0 +1,15 @@
+ALGORITMO ADIVININANDO_LA_PALABRA
+ENTRADA: c: caracter, palabra: cadena de caracteres
+SALIDA: palabra: cadena de caracteres, intentos: entero
+VAR. AUX: en_palabra: bool, 
+CONSTANTES:
+
+A0. Inicializar
+    intentos <- 3
+A1. LEER(palabra)
+A2. ProcesarPalabra
+A3. MostrarResultados
+A$: FIN_ALGORITMO
+
+A2. ProcesarPalabra
+    
